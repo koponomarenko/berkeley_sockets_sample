@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-// echo server, using 'select' (multiplexing)
+// echo server, using 'select()' (multiplexing)
 
 int set_nonblock(int fd)
 {

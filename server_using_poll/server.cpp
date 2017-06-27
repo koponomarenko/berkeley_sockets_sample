@@ -9,9 +9,9 @@
 #include <fcntl.h>
 #include <poll.h>
 
-#define POLL_SIZE 2048 // we need to set number of descriptors for poll
+#define POLL_SIZE 2048 // we need to set number of descriptors for 'poll()'
 
-// echo server, using 'poll' (multiplexing)
+// echo server, using 'poll()' (multiplexing)
 
 int set_nonblock(int fd)
 {
