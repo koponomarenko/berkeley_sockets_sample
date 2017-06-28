@@ -1,6 +1,4 @@
 #include <iostream>
-#include <set>
-#include <algorithm>
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -31,7 +29,6 @@ int set_nonblock(int fd)
 int main(int argc, char ** argv)
 {
 	int masterSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	std::set<int> clientSockets;
 
 	struct sockaddr_in sockAddr;
 	sockAddr.sin_family = AF_INET;
