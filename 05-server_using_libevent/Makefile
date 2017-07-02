@@ -1,5 +1,5 @@
 all:
-	$(CXX) -std=c++11 -o server.out server.cpp
+	$(CC) -levent -g -o server.out server.c
 
 clean:
 	rm *.out &>/dev/null

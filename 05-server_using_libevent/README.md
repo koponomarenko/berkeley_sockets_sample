@@ -1,16 +1,14 @@
-# A simple server for Linux using 'poll()'
+# A simple server for Linux using 'libevent'
 
-written in C++
+written in C
 
 Srever returns to the client whatever the client sends.
 Server handles multiple connections - up to whatever you set.
 
-
-DRAWBACKS:
-
-Every time poll() is called, the whole set (or array) of 'pollfd' structures is passed (copied) to the kernel, and then returned (copied again) back.
+This approach easily allows 10K connections on one machine.
 
 
 TIPS:
 
-It is possible to use 'telnet 127.0.0.1 12345' as a client to test this 'echo' server.
+Because this server uses Unix (file) sosket, you can use 'socat' (similar to netcat) as a client.
+The command might look like: echo "bla" | socat - UNIX-CONNECT:/tmp/echo-server.sock
