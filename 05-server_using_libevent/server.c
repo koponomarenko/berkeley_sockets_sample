@@ -24,8 +24,9 @@ static void echo_read_cb(struct bufferevent * bev, void * ctx)
 	size_t len = evbuffer_get_length(input);
 	char * data = malloc(len);
 	evbuffer_copyout(input, data, len);
-	//data[len - 1] = '\0';
-	printf("data: %s", data);
+	data[len - 1] = '\0';
+	printf("data: %s\n", data);
+	//fflush(stdout);
 	free(data);
 
 	evbuffer_add_buffer(output, input);
