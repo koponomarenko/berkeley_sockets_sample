@@ -11,6 +11,7 @@
 #include <sys/un.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <unistd.h>
 
 #define UNIX_SOCKET_PATH "/tmp/echo-server.sock"
 
@@ -63,13 +64,7 @@ static void accept_error_cb(struct evconnlistener * listener, void * ctx)
 
 int main(int argc, char ** argv)
 {
-	struct stat fileStat;
-	int rc = stat(UNIX_SOCKET_PATH, &fileStat);
-	if (!rc || errno != ENOENT)
-	{
-		printf("Error: cannot start, file \"%s\" already exists\n", UNIX_SOCKET_PATH);
-		return -1;
-	}
+	unlink(UNIX_SOCKET_PATH);
 
 	struct event_base * base = event_base_new();
 
