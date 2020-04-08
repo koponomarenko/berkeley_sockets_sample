@@ -1,5 +1,17 @@
-# Prerequisites
-*.d
+# Vim .swp
+*.swp
+
+*.cflags
+*.config
+*.creator
+*.creator.user
+*.cxxflags
+*.files
+*.includes
+*.autosave
+
+# Ignore meson build dirs
+build*
 
 # Compiled Object files
 *.slo
@@ -18,7 +30,6 @@
 
 # Fortran module files
 *.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
