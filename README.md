@@ -1,4 +1,4 @@
-# linux_sockets_sample
+# Berkeley sockets
 
 Useful resources:
 
